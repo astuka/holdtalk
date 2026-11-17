@@ -1,0 +1,16 @@
+# Copy to ~/.config/holdtalk/config.toml. After editing:  systemctl --user restart holdtalk
+# Every setting and its default is listed at the top of holdtalk.py.
+
+# Hold any of these keys to dictate. One name or a list.
+# To see what a key is called:  ./holdtalk.py detect
+key = ["KEY_FN", "KEY_RIGHTCTRL"]
+
+model = "gpt-4o-transcribe"   # or "gpt-4o-mini-transcribe" (half the price)
+language = "en"               # "" = auto-detect
+prompt = ""                   # spelling hints, e.g. "Godot, Hyprland, Manjaro"
+notify = "all"                # all | errors | none
+
+# API key: put OPENAI_API_KEY=sk-... in ~/.config/holdtalk/env (chmod 600),
+# or read it from 1Password instead:
+# op_ref = "op://Vault/Item/credential"
+# op_token_file = "~/.config/op/service-account.env"

@@ -1,0 +1,12 @@
+# Copy to ~/.config/systemd/user/ and fix the path below, then:
+#   systemctl --user daemon-reload && systemctl --user enable --now holdtalk
+[Unit]
+Description=holdtalk: hold a key to dictate into the focused window
+
+[Service]
+ExecStart=/usr/bin/python3 -u %h/holdtalk/holdtalk.py run
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target
